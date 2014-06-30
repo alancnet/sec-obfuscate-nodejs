@@ -1,0 +1,30 @@
+{
+  "name": "sec-obfuscate-nodejs",
+  "description": "Obfuscate IDs in a secure way!",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/meshuga/id-sec-obfuscate-nodejs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/meshuga/id-sec-obfuscate-nodejs.git"
+  },
+  "keywords": [
+    "id obfuscation",
+    "obfuscation",
+    "stream ciphers",
+    "openssl",
+    "security"
+  ],
+  "author": {
+    "name": "Patryk Orwat",
+    "email": "meshuga27@gmail.com"
+  },
+  "main": "./lib/id-sec-obfuscate.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "expect.js": "0.3.x"
+  }
+}
