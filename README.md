@@ -28,5 +28,6 @@ Code below presents a simple example of how the library can be used. More exampl
 ```js
 var SecObfuscate = require("sec-obfuscate-nodejs"),
 secObfuscate = new SecObfuscate('secretPassword'),
-encryptedValue = secObfuscate.encrypt(42);
+encryptedValue = secObfuscate.encrypt(42),
+decryptedValue = secObfuscate.decrypt(encryptedValue),
 ```
