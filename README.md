@@ -1,11 +1,15 @@
-sec-obfuscate-nodejs
+sec-obfuscate
 ====================
-sec-obfuscate-nodejs is a library which obfuscates numbers (IDs etc...) using ciphers from [OpenSSL](https://www.openssl.org/).
+
+_sec-obfuscate is a fork of the original [sec-obfuscate-nodejs](https://github.com/meshuga/sec-obfuscate-nodejs) last updated in 2014. There have been deprecations since then, so this library addresses those._
+
+sec-obfuscate is a library which obfuscates numbers (IDs etc...) using ciphers from [OpenSSL](https://www.openssl.org/).
+
 
 ## Parameters
 ```js
 var SecObfuscate = require("sec-obfuscate-nodejs"),
-secObfuscate = new SecObfuscate(password, [cipher], [blockLength]);
+secObfuscate = new SecObfuscate(key, iv, [cipher], [blockLength]);
 ```
 `cipher` is a name of a encrption algorithm in OpenSSL notation. Default value is **AES-256-CTR**.
 `blockLength` is a length of the output block. It have to be a multiple of 8. Default value is **32**.
@@ -27,7 +31,10 @@ Currently only stream cipher ([RC4](https://en.wikipedia.org/wiki/RC4)) or [AES]
 Code below presents a simple example of how the library can be used. More examples are available in _test_ directory.
 ```js
 var SecObfuscate = require("sec-obfuscate-nodejs"),
-secObfuscate = new SecObfuscate('secretPassword'),
+    key = '0123456789abcdef0123456789abcdef',
+    iv = '0123456789abcdef'
+
+secObfuscate = new SecObfuscate(key, iv),
 encryptedValue = secObfuscate.encrypt(42),
 decryptedValue = secObfuscate.decrypt(encryptedValue),
 ```
